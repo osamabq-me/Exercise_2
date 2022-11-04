@@ -154,6 +154,36 @@ namespace Exercise_2
                     Console.WriteLine("===================");
                     Console.WriteLine("     Merge sort     ");
                     Console.WriteLine("===================");
+                    int[] oss = new int[20];
+                    int i, n;
+                    Console.Clear();
+                    while (true)
+                    {
+                        Console.Write("Enter the number of elements in the array  ");
+                        string s = Console.ReadLine();
+                        n = Int32.Parse(s);
+                        if ((n > 0) && (n <= 27))
+                        {
+                            break;
+                        }
+                        else
+                            Console.WriteLine("\n Array sholud have minimum 1 and maximam 27 elements. \n");
+                    }
+                    //Accept array elements
+                    Console.WriteLine("");
+                    Console.WriteLine("---------------------");
+                    Console.WriteLine(" Enter array elements  ");
+                    Console.WriteLine("---------------------");
+                    for (i = 0; i < n; i++)
+                    {
+                        Console.Write("<" + (i + 1) + ">");
+                        string s1 = Console.ReadLine();
+                        oss[i] = Int32.Parse(s1);
+
+                    }
+                    mergeSort(oss, 0, n - 1);
+
+
                     Console.ReadKey();
                     break;
                 case 3:
