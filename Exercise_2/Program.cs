@@ -16,7 +16,7 @@ namespace Exercise_2
             Console.Clear();
             while (true)
             {
-                Console.Write("Enter the number of elements in the array  ");
+                Console.Write("Enter the number of Students grades to the array  ");
                 string s = Console.ReadLine();
                 n = Int32.Parse(s);
                 if ((n > 0) && (n <= 27))
@@ -29,7 +29,7 @@ namespace Exercise_2
             //Accept array elements
             Console.WriteLine("");
             Console.WriteLine("---------------------");
-            Console.WriteLine(" Enter array elements  ");
+            Console.WriteLine(" Enter GPA grades   ");
             Console.WriteLine("---------------------");
             for (i = 0; i < n; i++)
             {
@@ -128,11 +128,12 @@ namespace Exercise_2
             Program se = new Program();
             int choice;
             Console.WriteLine("---------------------------------");
-            Console.WriteLine("Welcome to array search assistant");
+            Console.WriteLine("Welcome to GPA sorting assistant");
             Console.WriteLine("---------------------------------");
             Console.WriteLine("  choose the Sorting method    ");
             Console.WriteLine("1. Insertion sort");
-            Console.WriteLine("2. Exit ");
+            Console.WriteLine("2. Merge sort     ");
+            Console.WriteLine("3. Exit ");
 
             Console.WriteLine("Enter your choice (1,2,3)  :  ");
 
@@ -172,7 +173,7 @@ namespace Exercise_2
                     //Accept array elements
                     Console.WriteLine("");
                     Console.WriteLine("---------------------");
-                    Console.WriteLine(" Enter array elements  ");
+                    Console.WriteLine(" Enter GPA grades  ");
                     Console.WriteLine("---------------------");
                     for (i = 0; i < n; i++)
                     {
@@ -182,8 +183,11 @@ namespace Exercise_2
 
                     }
                     mergeSort(oss, 0, n - 1);
-
-
+                    Console.WriteLine("Sorted GPA is:");
+                    for (i = 0; i < n; i++)
+                    {
+                        Console.Write(oss[i] + " ");
+                    }
                     Console.ReadKey();
                     break;
                 case 3:
