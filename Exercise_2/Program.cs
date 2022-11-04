@@ -55,6 +55,16 @@ namespace Exercise_2
             }
 
         }
+
+        static void PrintArray(int[] oss)
+        {
+            int n = oss.Length;
+            for (int i = 0; i < n; i++)
+                Console.Write(oss[i] + " ");
+            Console.Write("\n");
+        }
+
+
         static void Main(string[] args)
         {
         }
