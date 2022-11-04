@@ -43,11 +43,14 @@ namespace Exercise_2
         public void Insertionsort()
         {
             int temp;
-            int OA = i - 1;
             for (int i =0; i < n; i++)
             {
                 temp = oss[i];
+                int OA = i - 1;
+                while(OA> 0 && oss[OA]>temp)
+                {
 
+                }
             }
 
         }
