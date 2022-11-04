@@ -43,30 +43,134 @@ namespace Exercise_2
         public void Insertionsort()
         {
             int temp;
-            for (int i =0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
                 temp = oss[i];
-                int OA = i - 1;
-                while(OA> 0 && oss[OA]>temp)
+                int oa = i - 1;
+                while (oa >= 0 && oss[oa] > temp)
                 {
-                    oss[OA + 1] = oss[OA];
-                    OA = OA - 1;
+                    oss[oa + 1] = oss[oa];
+                    oa = oa - 1;
                 }
+                oss[oa + 1] = temp;
+
             }
 
         }
-
-        static void PrintArray(int[] oss)
+        public void PrintArray()
         {
-            int n = oss.Length;
             for (int i = 0; i < n; i++)
                 Console.Write(oss[i] + " ");
             Console.Write("\n");
         }
 
+        static public void merge(int[] arr, int high, int mid, int low)
+        {
+            int i, oa, k;
+            int n1 = mid - high + 1;
+            int n2 = low - mid;
+            int[] L = new int[n1];
+            int[] R = new int[n2];
+            for (i = 0; i < n1; i++)
+            {
+                L[i] = arr[high + i];
+            }
+            for (oa = 0; oa < n2; oa++)
+            {
+                R[oa] = arr[mid + 1 + oa];
+            }
+            i = 0;
+            oa = 0;
+            k = high;
+            while (i < n1 && oa < n2)
+            {
+                if (L[i] <= R[oa])
+                {
+                    arr[k] = L[i];
+                    i++;
+                }
+                else
+                {
+                    arr[k] = R[oa];
+                    oa++;
+                }
+                k++;
+            }
+            while (i < n1)
+            {
+                arr[k] = L[i];
+                i++;
+                k++;
+            }
+            while (oa < n2)
+            {
+                arr[k] = R[oa];
+                oa++;
+                k++;
+            }
+        }
+        static public void mergeSort(int[] arr, int high, int low)
+        {
+            if (high < low)
+            {
+                int mid = (high + low) / 2;
+                mergeSort(arr, high, mid);
+                mergeSort(arr, mid + 1, low);
+                merge(arr, high, mid, low);
+            }
+        }
+
+
+
 
         static void Main(string[] args)
         {
+            Program se = new Program();
+            int choice;
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("Welcome to array search assistant");
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("  choose the Sorting method    ");
+            Console.WriteLine("1. Insertion sort");
+            Console.WriteLine("2. Exit ");
+
+            Console.WriteLine("Enter your choice (1,2,3)  :  ");
+
+            choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("");
+                    Console.WriteLine("===================");
+                    Console.WriteLine("   Insertion sort   ");
+                    Console.WriteLine("===================");
+                    se.input();
+                    se.Insertionsort();
+                    se.PrintArray();
+                    Console.ReadKey();
+                    break;
+                case 2:
+                    Console.WriteLine("");
+                    Console.WriteLine("===================");
+                    Console.WriteLine("     Merge sort     ");
+                    Console.WriteLine("===================");
+                    Console.ReadKey();
+                    break;
+                case 3:
+                    Console.WriteLine("");
+                    Console.WriteLine("===================");
+                    Console.WriteLine("     Thank you     ");
+                    Console.WriteLine("===================");
+                    Console.ReadKey();
+                    break;
+                default:
+                    Console.WriteLine("Error ");
+                    break;
+
+            }
+
+
+
         }
     }
 }
