@@ -38,8 +38,17 @@ namespace Exercise_2
                 oss[i] = Int32.Parse(s1);
 
             }
+        }
 
+        public void Insertionsort()
+        {
+            int temp;
+            int OA = i - 1;
+            for (int i =0; i < n; i++)
+            {
+                temp = oss[i];
 
+            }
 
         }
         static void Main(string[] args)
