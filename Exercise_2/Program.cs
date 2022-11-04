@@ -8,6 +8,7 @@ namespace Exercise_2
 {
     class Program
     {
+        int[]oss = new int[27];
         static void Main(string[] args)
         {
         }
