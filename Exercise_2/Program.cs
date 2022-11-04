@@ -49,7 +49,8 @@ namespace Exercise_2
                 int OA = i - 1;
                 while(OA> 0 && oss[OA]>temp)
                 {
-
+                    oss[OA + 1] = oss[OA];
+                    OA = OA - 1;
                 }
             }
 
